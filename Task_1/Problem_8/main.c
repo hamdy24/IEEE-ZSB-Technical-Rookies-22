@@ -4,8 +4,9 @@
 
 int main()
 {
+	srand(time(0));
     int random = (rand() % 10) + 1;
-    int num , counter;
+    int num , counter = 0;
 
     printf("Enter the number you expect:\n");
     scanf(" %d" ,&num );

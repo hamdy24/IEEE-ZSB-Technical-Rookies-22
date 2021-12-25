@@ -54,7 +54,7 @@ int While_Loop_Sum(int arr[])
 int Recursion_Sum(int arr[] , int temp2)
 {
 
-      if( --temp2 >= 0)
+      if( temp2-- > 0)
     {
         return (arr[temp2] + Recursion_Sum(arr , temp2));
     }

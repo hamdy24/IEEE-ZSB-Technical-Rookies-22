@@ -1,11 +1,8 @@
 #include <stdio.h>
-#include <stdlib.h>
-
-/*********** Printing All Prime Numbers under a specific number ******************/
 
 int main()
 {
-    int num;
+     int num;
     int check_value;
 
     printf("Enter A number: \n");
@@ -15,14 +12,15 @@ int main()
     {
         for(int j = 2 ; j <= num ; j++)
         {
-            for( int i = 2 ; (i <= (j/2)) ; i++)
+            for( int i = 2 ; i*i <= j ; i++)
             {
                 if( (j % i) == 0 )
                 {
                     check_value++;
                 }
             }
-                    if(check_value == 0)
+                    // becouse "2" affects "check_value" while being a real prime number
+                    if(check_value == 0 || j == 2) 
                         {
                             printf("%d   ", j);
                         }
@@ -33,7 +31,9 @@ int main()
 
 
     }
-
+	
+	else
+		printf("Invalid");
 
     return 0;
 }

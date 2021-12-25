@@ -1,13 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define FRAME_STYLE_CORRECTION	4 // 2 for "*" and a space " " in the front and the same at the end
+
 int main()
 {
 
     char  str[200];
     int i = 0 ,letters = 0, longest = 0 , word_counter = 0;
-
-    gets(str);
+	
+	printf("Enter the scentence : \n");
+    scanf(" %[^\n]s",str);
 
     // for calculating number of letters for the longest word
     for (i = 0; str[i] != '\0'; i++)
@@ -26,7 +29,7 @@ int main()
         }
 
         //for the first line
-        for(i=0 ; i<(longest+4) ; i++)
+        for(i=0 ; i<(longest + FRAME_STYLE_CORRECTION ) ; i++)
         {
             printf("*");
         }
@@ -62,7 +65,7 @@ int main()
     printf("*\n");
 
     // for the last line
-   for(i=0 ; i<(longest+4) ; i++)
+   for(i=0 ; i<(longest + FRAME_STYLE_CORRECTION ) ; i++)
         {
             printf("*");
         }
@@ -70,3 +73,4 @@ int main()
 
     return 0;
 }
+
